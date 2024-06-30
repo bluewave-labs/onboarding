@@ -13,28 +13,27 @@ const Dashboard = ({ username }) => {
     { metricName: "Popup Views", metricValue: 3000, changeRate: 15 }
   ];
 
-  const buttons = [
-    { placeholder: "Create a welcome tour" },
-    { placeholder: "Add a hint to your app" },
-    { placeholder: "Create a new banner" }
-  ];
+    const buttons = [
+        { placeholder: "Create a welcome tour"},
+        { placeholder: "Add a hint to your app" },
+        { placeholder: "Create a new banner"}
+    ];
+    return (
+        <>
+            <div className={styles.container}>
+                <div className={styles.top}>
+                    <UserTitle userName={username}/>
+                    <DateDisplay/>
+                </div>
+                <div className={styles.text}>
+                Start with a popular onboarding process
+                </div>
+                <CreateActivityButtonList buttons={buttons} />
+                <StatisticCardList metrics={metrics} />
+            </div>
 
-  return (
-    <>
-      <div className={styles.container}>
-        <div className={styles.top}>
-          <UserTitle userName={username} />
-          <DateDisplay />
-        </div>
-        <div className={styles.text}>
-          Start with a popular onboarding process
-        </div>
-        <CreateActivityButtonList buttons={buttons} />
-        <StatisticCardList metrics={metrics} />
-        
-      </div>
-    </>
-  );
+        </>
+    );
 };
 
 export default Dashboard;
